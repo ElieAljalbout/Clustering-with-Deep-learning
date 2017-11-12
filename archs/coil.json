@@ -1,0 +1,491 @@
+[
+    {
+      "name": "c-9-20_p-2_c-5-20_p-2_c-5-40_p-2_c-4-320",
+      "use_batch_norm":1,
+      "batch_size": 10,
+      "layers": [
+        {
+          "type":"Input",
+          "output_shape": [1, 128, 128]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [9, 9],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 40,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 320,
+          "filter_size": [4, 4],
+          "non_linearity": "linear"
+        }
+      ]
+    },
+    {
+    "name": "c-9-20_p_c-5-20_p_c-5-20_p_c-5-320_p_fc-400",
+    "use_batch_norm":1,
+    "batch_size": 10,
+    "layers": [
+        {
+          "type":"Input",
+          "output_shape": [1, 128, 128]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [9, 9],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 320,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type": "Dense",
+          "num_units": 5120,
+          "non_linearity": "rectify"
+        },
+        {
+          "type": "Dense",
+          "num_units": 400,
+          "non_linearity": "rectify"
+        }
+      ]
+    },
+    {
+    "name": "c-9-20_p_c-5-20_p_c-5-20_p_c-5-320_p_fc-400-fc-200",
+    "use_batch_norm":1,
+    "batch_size": 10,
+    "layers": [
+        {
+          "type":"Input",
+          "output_shape": [1, 128, 128]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [9, 9],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 320,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type": "Dense",
+          "num_units": 5120,
+          "non_linearity": "rectify"
+        },
+        {
+          "type": "Dense",
+          "num_units": 400,
+          "non_linearity": "rectify"
+        },
+        {
+          "type": "Dense",
+          "num_units": 200,
+          "non_linearity": "rectify"
+        }
+      ]
+    },
+    {
+    "name": "c-9-20_p_c-5-20_p_c-5-20_p_c-5-320_p_fc-200",
+    "use_batch_norm":1,
+    "batch_size": 10,
+    "layers": [
+        {
+          "type":"Input",
+          "output_shape": [1, 128, 128]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [9, 9],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 320,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type": "Dense",
+          "num_units": 5120,
+          "non_linearity": "rectify"
+        },
+        {
+          "type": "Dense",
+          "num_units": 200,
+          "non_linearity": "rectify"
+        }
+      ]
+    },
+    {
+    "name": "c-9-20_p_c-5-20_p_c-5-20_p_c-5-320_p_fc-80",
+    "use_batch_norm":1,
+    "batch_size": 10,
+    "layers": [
+        {
+          "type":"Input",
+          "output_shape": [1, 128, 128]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [9, 9],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 320,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type": "Dense",
+          "num_units": 5120,
+          "non_linearity": "rectify"
+        },
+        {
+          "type": "Dense",
+          "num_units": 80,
+          "non_linearity": "rectify"
+        }
+      ]
+    },
+    {
+    "name": "c-9-20_p_c-5-20_p_c-5-20_p_c-5-320_p_fc-32",
+    "use_batch_norm":1,
+    "batch_size": 10,
+    "layers": [
+        {
+          "type":"Input",
+          "output_shape": [1, 128, 128]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [9, 9],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 320,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type": "Dense",
+          "num_units": 5120,
+          "non_linearity": "rectify"
+        },
+        {
+          "type": "Dense",
+          "num_units": 32,
+          "non_linearity": "rectify"
+        }
+      ]
+    },
+    {
+    "name": "c-9-20_p_c-5-20_p_c-5-20_p_c-5-320_p_fc-1",
+    "use_batch_norm":0,
+    "batch_size": 10,
+    "layers": [
+        {
+          "type":"Input",
+          "output_shape": [1, 128, 128]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [9, 9],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 320,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type": "Dense",
+          "num_units": 5120,
+          "non_linearity": "rectify"
+        },
+        {
+          "type": "Dense",
+          "num_units": 1,
+          "non_linearity": "rectify"
+        }
+      ]
+    },
+    {
+    "name": "c-9-20_p_c-5-20_p_c-5-20_p_c-5-320_p_fc-20",
+    "use_batch_norm":1,
+    "batch_size": 10,
+    "layers": [
+        {
+          "type":"Input",
+          "output_shape": [1, 128, 128]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [9, 9],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 20,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D",
+          "filter_size": [2, 2]
+        },
+        {
+          "type":"Conv2D",
+          "num_filters": 320,
+          "filter_size": [5, 5],
+          "non_linearity": "rectify"
+        },
+        {
+          "type":"MaxPool2D*",
+          "filter_size": [2, 2]
+        },
+        {
+          "type": "Dense",
+          "num_units": 5120,
+          "non_linearity": "rectify"
+        },
+        {
+          "type": "Dense",
+          "num_units": 20,
+          "non_linearity": "rectify"
+        }
+      ]
+    }
+]
