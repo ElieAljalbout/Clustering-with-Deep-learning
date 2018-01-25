@@ -1,15 +1,16 @@
 Deep Learning for Clustering
 =======================
-Code for project "Deep Learning for Clustering" under lab course  "Deep Learning for Computer Vision and Biomedicine". Depends on **numpy**, **theano**, **lasagne**, **scikit-learn**, **matplotlib**. 
+Code for project "Deep Learning for Clustering" under lab course  "Deep Learning for Computer Vision and Biomedicine" - TUM. Depends on **numpy**, **theano**, **lasagne**, **scikit-learn**, **matplotlib**. 
 
 #### Contributors
 - [Mohd Yawar Nihal Siddiqui](mailto:yawarnihal@gmail.com)
 - [Elie Aljalbout](mailto:elie.aljalbout@tum.de)
 - [Vladimir Golkov](mailto:vladimir.golkov@tum.de) (Supervisor)
 
-#### Research work evaluations
-
-Paper summaries for works we went through can be found on [trello board](https://trello.com/b/PAW9DGJK/clustering-tasks) in the papers read section 
+#### Related Papers:
+ This repository is an implementation of the paper :
+ Elie Aljalbout, Vladimir Golkov, Yawar Siddiqui, Daniel Cremers "Clustering with Deep Learning: Taxonomy and new methods"
+ - arxiv: https://arxiv.org/abs/1801.07648
 
 Usage
 --------
@@ -150,17 +151,17 @@ DBC| 0.964|0.917
 ##### **Latent space visualizations**
 
 ###### Pixel space
-![](https://gitlab.lrz.de/ga83fiz/dlcv-praktikum-ss17-clustering/raw/ff9aca9ae9a1f51c37227f1f2ac47b1199db9468/plots/MNIST/raw.png)
+![](/plots/MNIST/raw.png)
 ###### Autoencoder
-![](https://gitlab.lrz.de/ga83fiz/dlcv-praktikum-ss17-clustering/raw/ff9aca9ae9a1f51c37227f1f2ac47b1199db9468/plots/MNIST/autoencoder.png)
+![](/plots/MNIST/autoencoder.png)
 ###### Autoencoder Latent Space Evolution (video)
 [![Autoencoder](http://img.youtube.com/vi/_WuUB3gD984/0.jpg)](https://www.youtube.com/watch?v=_WuUB3gD984)
 ###### Autoencoder + KLDivergence
-![](https://gitlab.lrz.de/ga83fiz/dlcv-praktikum-ss17-clustering/raw/ff9aca9ae9a1f51c37227f1f2ac47b1199db9468/plots/MNIST/clustered_kld.png)
+![](/plots/MNIST/clustered_kld.png)
 ###### Autoencoder + KLDivergence Latent Space Evolution (video)
 [![Autoencoder](http://img.youtube.com/vi/XYS7DFkVx_A/0.jpg)](https://www.youtube.com/watch?v=XYS7DFkVx_A)
 ###### Autoencoder + k-Means
-![](https://gitlab.lrz.de/ga83fiz/dlcv-praktikum-ss17-clustering/raw/ff9aca9ae9a1f51c37227f1f2ac47b1199db9468/plots/MNIST/clustered_km.png)
+![](/plots/MNIST/clustered_km.png)
 
 #### **COIL20**
 ##### Our network
@@ -179,10 +180,10 @@ DBC| 0.793|0.895
 
 ##### **Latent space visualizations**
 ###### Pixel space
-![](https://gitlab.lrz.de/ga83fiz/dlcv-praktikum-ss17-clustering/raw/ff9aca9ae9a1f51c37227f1f2ac47b1199db9468/plots/COIL20/raw.png)
+![](/plots/COIL20/raw.png)
 ###### Autoencoder
-![](https://gitlab.lrz.de/ga83fiz/dlcv-praktikum-ss17-clustering/raw/ff9aca9ae9a1f51c37227f1f2ac47b1199db9468/plots/COIL20/autoencoder.png)
+![](/plots/COIL20/autoencoder.png)
 ###### Autoencoder + k-Means
-![](https://gitlab.lrz.de/ga83fiz/dlcv-praktikum-ss17-clustering/raw/ff9aca9ae9a1f51c37227f1f2ac47b1199db9468/plots/COIL20/clustered_km.png)
+![](/plots/COIL20/clustered_km.png)
 ###### Autoencoder + KLDivergence
-![](https://gitlab.lrz.de/ga83fiz/dlcv-praktikum-ss17-clustering/raw/ff9aca9ae9a1f51c37227f1f2ac47b1199db9468/plots/COIL20/clustered_kld.png)
+![](/plots/COIL20/clustered_kld.png)
