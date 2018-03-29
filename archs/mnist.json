@@ -58,69 +58,6 @@
     ]
   },
   {
-    "name": "c-3-32_p_c-3-64_p_fc-32-conc",
-    "batch_size": 50,
-    "layers": [
-      {
-        "type": "Input",
-        "output_shape": [
-          1,
-          28,
-          28
-        ]
-      },
-      {
-        "type": "Conv2D",
-        "num_filters": 32,
-        "filter_size": [
-          3,
-          3
-        ],
-        "non_linearity": "rectify",
-        "conv_mode": "same"
-      },
-      {
-        "type": "MaxPool2D",
-        "filter_size": [
-          2,
-          2
-        ]
-      },
-      {
-        "type": "Conv2D",
-        "num_filters": 64,
-        "filter_size": [
-          3,
-          3
-        ],
-        "non_linearity": "rectify",
-        "conv_mode": "same"
-      },
-      {
-        "type": "MaxPool2D",
-        "filter_size": [
-          2,
-          2
-        ]
-      },
-      {
-        "type": "Dense",
-        "num_units": 3136,
-        "non_linearity": "rectify"
-      },
-      {
-        "type": "Dense",
-        "num_units": 32,
-        "non_linearity": "rectify"
-      },
-      {
-        "type": "Concat",
-        "input_layers_index":[4,6],
-        "output_shape":[1,1,4128]
-      }
-    ]
-  },
-  {
     "name": "c-5-6_p_c-5-16_p_c-4-120",
     "use_batch_norm": 1,
     "batch_size": 100,

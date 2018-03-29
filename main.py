@@ -5,6 +5,7 @@ import numpy
 import json
 from misc import DatasetHelper, evaluateKMeans, visualizeData
 from network import DCJC, rootLogger
+from copy import deepcopy
 import argparse
 
 
@@ -16,12 +17,13 @@ def testOnlyClusterInitialization(dataset_name, arch, epochs):
     :param epochs: Number of train epochs
     :return: None - (side effect) saves the latent space and params of trained network in an appropriate location in saved_params folder
     '''
+    arch_copy = deepcopy(arch)
     rootLogger.info("Loading dataset")
     dataset = DatasetHelper(dataset_name)
     dataset.loadDataset()
     rootLogger.info("Done loading dataset")
     rootLogger.info("Creating network")
-    dcjc = DCJC(arch)
+    dcjc = DCJC(arch_copy)
     rootLogger.info("Done creating network")
     rootLogger.info("Starting training")
     dcjc.pretrainWithData(dataset, epochs, False);
@@ -37,12 +39,13 @@ def testOnlyClusterImprovement(dataset_name, arch, epochs, method):
     :param method: Can be KM or KLD - depending on whether the clustering loss is KLDivergence loss between the current KMeans distribution(Q) and a more desired one(Q^2), or if the clustering loss is just the Kmeans loss
     :return: None - (side effect) saves latent space and params of the trained network
     '''
+    arch_copy = deepcopy(arch)
     rootLogger.info("Loading dataset")
     dataset = DatasetHelper(dataset_name)
     dataset.loadDataset()
     rootLogger.info("Done loading dataset")
     rootLogger.info("Creating network")
-    dcjc = DCJC(arch)
+    dcjc = DCJC(arch_copy)
     rootLogger.info("Starting cluster improvement")
     if method == 'KM':
         dcjc.doClusteringWithKMeansLoss(dataset, epochs)

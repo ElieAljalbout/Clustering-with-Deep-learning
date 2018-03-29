@@ -406,10 +406,6 @@ class NetworkBuilder(object):
                         "type": "Reshape",
                         "output_shape": encode_layers[i - 1]['output_shape']
                     })
-                if  (i+1<len(encode_layers) and encode_layers[i+1]['type']=="Concat"):
-                    decode_layers[-1]['num_leading_axes']=0
-
-
         encode_layers.extend(decode_layers)
 
     def populateShapes(self, layers):
@@ -446,7 +442,6 @@ class NetworkBuilder(object):
             network_description['output_non_linearity'] = network_description['layers'][1]['non_linearity']
         self.populateShapes(network_description['layers'])
         self.populateDecoder(network_description['layers'])
-        print(network_description['layers'])
         if 'use_batch_norm' not in network_description:
             network_description['use_batch_norm'] = False
         for layer in network_description['layers']:
@@ -462,12 +457,9 @@ class NetworkBuilder(object):
 		return lasagne.init.GlorotUniform()
 
     def processLayer(self, network, layer_definition):
-        
         '''
         Create a lasagne layer corresponding to the "layer definition"
         '''
-        print(layer_definition,"=====\n")
-        ilayers=[] # will later be filled by the flattened layers in case of a concatlayer
         if (layer_definition["type"] == "Input"):
             if self.network_type == 'CAE':
                 network = lasagne.layers.InputLayer(shape=tuple([None] + layer_definition['output_shape']), input_var=self.t_input)
@@ -487,11 +479,6 @@ class NetworkBuilder(object):
             network = lasagne.layers.ReshapeLayer(network, shape=tuple([-1] + layer_definition["output_shape"]), name=self.getLayerName(layer_definition))
         elif (layer_definition['type'] == 'Deconv2D'):
             network = lasagne.layers.Deconv2DLayer(network, num_filters=layer_definition['num_filters'], filter_size=tuple(layer_definition['filter_size']), crop=layer_definition['conv_mode'], nonlinearity=self.getNonLinearity(layer_definition['non_linearity']), name=self.getLayerName(layer_definition))
-        elif (layer_definition['type'] == 'Concat'):
-            for ilayer in layer_definition['input_layers_index']:
-                network = lasagne.layers.flatten(self.layer_list[ilayer],outdim=1, name='fl')
-                ilayers.append(network)
-            network = lasagne.layers.ConcatLayer(ilayers, axis=0)
         self.layer_list.append(network)
         # Batch normalization on all convolutional layers except if at output
         if (self.batch_norm and (not layer_definition["is_output"]) and layer_definition['type'] in ("Conv2D", "Deconv2D")):
